@@ -1,0 +1,9 @@
+{
+  "name": "Hercules",
+  "version": "1.0.0",
+  "description": "Weightlight journal app.",
+  "main": "index.js",
+  "repository": "https://github.com/javontaymcelroy/hercules-frontend.git",
+  "author": "Javontay McElroy",
+  "license": "MIT"
+}
