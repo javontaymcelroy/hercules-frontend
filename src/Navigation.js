@@ -4,7 +4,6 @@ import { NavLink, Link, withRouter } from "react-router-dom";
 import "./components/SCSS/navigation.scss";
 
 import logo from "./components/assets/hercules_logo_gold.svg";
-import profile from "./components/assets/user.svg";
 
 const Navigation = props => {
   const signOut = () => {
