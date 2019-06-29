@@ -13,6 +13,17 @@ class Login extends Component {
     };
   }
 
+  login = e => {
+    e.preventDefault();
+    axios
+      .post("https://hercules-backend.herokuapp.com/login", this.state.signIn)
+      .then(res => {
+        localStorage.setItem("token", res.data.token);
+        this.props.history.push("/dashboard");
+      })
+      .catch(err => console.log(err));
+  };
+
   handleChanges = e => {
     this.setState({
       signIn: {
@@ -42,7 +53,7 @@ class Login extends Component {
             onChange={this.handleChanges}
             placeholder="password"
           />
-          <button onClick={this.login} className="log-in-btn">
+          <button type="submit" className="log-in-btn">
             Let's go!
           </button>
         </form>

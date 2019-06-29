@@ -16,6 +16,19 @@ class Register extends Component {
     };
   }
 
+  register = e => {
+    e.preventDefault();
+    axios
+      .post(
+        "https://hercules-backend.herokuapp.com/register",
+        this.state.registration
+      )
+      .then(() => {
+        this.props.history.push("/sign_in");
+      })
+      .catch(err => console.log(err));
+  };
+
   handleChanges = e => {
     this.setState({
       registration: {
@@ -65,8 +78,10 @@ class Register extends Component {
             value={registration.password}
             onChange={this.handleChanges}
           />
+          <button type="submit" className="log-in-btn">
+            Let's go!
+          </button>
         </form>
-        <button className="log-in-btn">Let's go!</button>
       </div>
     );
   }
