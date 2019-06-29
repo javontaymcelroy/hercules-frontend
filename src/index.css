@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h1 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+h6 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  color: white;
+}

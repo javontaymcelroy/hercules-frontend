@@ -1,0 +1,31 @@
+.navigation-container {
+  position: absolute;
+  z-index: 999999999;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  right: 0;
+  margin: 4vh auto 0;
+
+  .logo {
+    width: 70%;
+  }
+
+  .inner-nav {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .links {
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .links:hover {
+    color: #ffec42;
+  }
+}
