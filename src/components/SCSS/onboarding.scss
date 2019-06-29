@@ -53,6 +53,11 @@
       outline: #ffec42;
     }
 
+    .password {
+      -webkit-text-security: disc;
+      text-security: disc;
+    }
+
     .onboarding-btn {
       background: #ffec42;
       border: none;

@@ -78,11 +78,12 @@ class Register extends Component {
             onChange={this.handleChanges}
           />
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="password"
             value={registration.password}
             onChange={this.handleChanges}
+            className="password"
           />
           <button type="submit" className="onboarding-btn">
             Let's go!

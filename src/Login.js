@@ -51,11 +51,12 @@ class Login extends Component {
             placeholder="username"
           />
           <input
-            type="text"
+            type="password"
             name="password"
             value={signIn.password}
             onChange={this.handleChanges}
             placeholder="password"
+            className="password"
           />
           <button type="submit" className="onboarding-btn">
             Let's go!
