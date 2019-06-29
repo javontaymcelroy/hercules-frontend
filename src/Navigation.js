@@ -19,7 +19,7 @@ const Navigation = props => {
       </Link>
       <div className="inner-nav">
         {localStorage.token ? (
-          <NavLink to="/dashboard" className="links">
+          <NavLink to="/" className="links">
             Dashboard
           </NavLink>
         ) : null}
@@ -43,15 +43,15 @@ const Navigation = props => {
         ) : null}
 
         {localStorage.token ? (
-          <button onClick={signOut} className="sign-out-btn">
-            Sign Out
-          </button>
+          <NavLink to="/profile" className="links">
+            Profile
+          </NavLink>
         ) : null}
 
         {localStorage.token ? (
-          <Link to="/profile">
-            <img src={profile} className="profile" alt="profile" />
-          </Link>
+          <button onClick={signOut} className="sign-out-btn">
+            Sign Out
+          </button>
         ) : null}
       </div>
     </div>

@@ -23,6 +23,7 @@
   }
 
   .rep-lifted-flex {
+    margin-bottom: 2%;
     color: white;
     text-transform: uppercase;
     width: 25%;
@@ -30,13 +31,46 @@
     justify-content: space-between;
   }
 
-  .select-exercise-btn {
-    background: #ffec42;
-    padding: 1.4% 6%;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+  .select-pages-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .select-exercise-btn {
+      background: #ffec42;
+      width: 280%;
+      height: 100%;
+      font-weight: bold;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .page-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      width: 10%;
+
+      .page_btns {
+        background: white;
+        border: 2px solid white;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .page_btns:hover {
+        background: #ffec42;
+        border: 2px solid #ffec42;
+      }
+
+      .inactive {
+        background: none;
+        border: 2px solid black;
+        filter: invert(1);
+        pointer-events: none;
+      }
+    }
   }
 
   .select-exercise-btn:hover {

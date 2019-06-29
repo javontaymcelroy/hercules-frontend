@@ -19,17 +19,17 @@
   }
 
   .inner-nav {
-    width: 25%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    width: max-content;
   }
 
   .sign-out-btn {
+    margin-right: 30px;
     background: none;
     color: white;
     border: none;
     font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
   }
@@ -39,8 +39,11 @@
   }
 
   .links {
+    margin-right: 30px;
     color: white;
     text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
     transition: all 0.2s ease-in-out;
   }
 

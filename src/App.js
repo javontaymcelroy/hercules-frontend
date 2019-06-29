@@ -21,11 +21,16 @@ class App extends Component {
     return (
       <div>
         <Navigation />
-        <Route exact path="/" component={LandingPage} />
+        {localStorage.token ? (
+          <Route exact path="/" component={Dashboard} />
+        ) : (
+          <Route exact path="/" component={LandingPage} />
+        )}
+
         <Route exact path="/sign_in" component={Login} />
         <Route exact path="/create_account" component={Register} />
         <Route exact path="/onboarding" component={Onboarding} />
-        <Route exact path="/dashboard" component={Dashboard} />
+
         <Route exact path="/exercise/:id" component={SingleExercise} />
       </div>
     );

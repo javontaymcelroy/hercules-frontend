@@ -22,7 +22,7 @@ class Login extends Component {
       .post("https://hercules-backend.herokuapp.com/login", this.state.signIn)
       .then(res => {
         localStorage.setItem("token", res.data.token);
-        this.props.history.push("/dashboard");
+        this.props.history.push("/");
       })
       .catch(err => console.log(err));
   };
