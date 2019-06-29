@@ -10,10 +10,16 @@
 
   .logo {
     width: 70%;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+  }
+
+  .logo:hover {
+    filter: grayscale(100%);
   }
 
   .inner-nav {
-    width: 35%;
+    width: 25%;
     display: flex;
     justify-content: space-around;
     align-items: center;

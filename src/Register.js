@@ -1,6 +1,11 @@
 import React from "react";
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
+
+import "./components/SCSS/onboarding.scss";
+
+import back from "./components/assets/Back.svg";
 
 class Register extends Component {
   constructor(props) {
@@ -41,8 +46,9 @@ class Register extends Component {
   render() {
     const registration = this.state.registration;
     return (
-      <div>
+      <div className="onboarding-container">
         <form onSubmit={this.register} className="form-container">
+          <h1 className="onboarding-title">Create an account</h1>
           <input
             type="text"
             name="username"
@@ -78,9 +84,12 @@ class Register extends Component {
             value={registration.password}
             onChange={this.handleChanges}
           />
-          <button type="submit" className="log-in-btn">
+          <button type="submit" className="onboarding-btn">
             Let's go!
           </button>
+          <Link to="/onboarding">
+            <img src={back} className="back" alt="back" />
+          </Link>
         </form>
       </div>
     );

@@ -12,7 +12,7 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       exercises: [],
-      pageNumber: 3
+      pageNumber: 1
     };
   }
 
@@ -35,6 +35,11 @@ class Dashboard extends Component {
               <img src={accent} className="accent" alt="accent" />
               <h1 className="exercise-title">{exercise.exerciseTitle}</h1>
               <p className="exercise-desc">{exercise.description}</p>
+              <div className="rep-lifted-flex">
+                <p>Previous Reps: {exercise.reps}</p>
+                <p>|</p>
+                <p>Previously Lifted: {exercise.amountLifted}</p>
+              </div>
               <Link to={`/exercise/${exercise.id}`}>
                 <button className="select-exercise-btn">Select Exercise</button>
               </Link>

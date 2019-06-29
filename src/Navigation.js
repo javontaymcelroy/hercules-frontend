@@ -14,13 +14,15 @@ const Navigation = props => {
 
   return (
     <div className="navigation-container">
-      <Link to="/home">
+      <Link to="/">
         <img src={logo} className="logo" alt="logo" />
       </Link>
       <div className="inner-nav">
-        <NavLink to="/dashboard" className="links">
-          Home
-        </NavLink>
+        {localStorage.token ? (
+          <NavLink to="/dashboard" className="links">
+            Dashboard
+          </NavLink>
+        ) : null}
 
         {localStorage.token ? (
           <NavLink to="/add_exercise" className="links">

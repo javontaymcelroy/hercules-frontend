@@ -1,6 +1,9 @@
 import React from "react";
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
+
+import back from "./components/assets/Back.svg";
 
 class Login extends Component {
   constructor(props) {
@@ -37,8 +40,9 @@ class Login extends Component {
     const signIn = this.state.signIn;
 
     return (
-      <div>
+      <div className="onboarding-container">
         <form onSubmit={this.login} className="form-container">
+          <h1 className="onboarding-title">Sign in</h1>
           <input
             type="text"
             name="username"
@@ -53,9 +57,12 @@ class Login extends Component {
             onChange={this.handleChanges}
             placeholder="password"
           />
-          <button type="submit" className="log-in-btn">
+          <button type="submit" className="onboarding-btn">
             Let's go!
           </button>
+          <Link to="/onboarding">
+            <img src={back} className="back" alt="back" />
+          </Link>
         </form>
       </div>
     );
