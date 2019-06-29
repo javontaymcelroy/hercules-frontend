@@ -11,12 +11,14 @@ import Navigation from "./Navigation";
 import LandingPage from "./components/LandingPage";
 import SingleExercise from "./components/SingleExercise";
 import Onboarding from "./components/Onboarding";
+import AddExercise from "./components/AddExercise";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
   render() {
     return (
       <div>
@@ -30,8 +32,8 @@ class App extends Component {
         <Route exact path="/sign_in" component={Login} />
         <Route exact path="/create_account" component={Register} />
         <Route exact path="/onboarding" component={Onboarding} />
-
         <Route exact path="/exercise/:id" component={SingleExercise} />
+        <Route exact path="/add_exercise" component={AddExercise} />
       </div>
     );
   }
