@@ -13,10 +13,23 @@
   }
 
   .inner-nav {
-    width: 30%;
+    width: 35%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+  }
+
+  .sign-out-btn {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .sign-out-btn:hover {
+    color: #ffec42;
   }
 
   .links {

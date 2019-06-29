@@ -8,6 +8,7 @@ import Login from "./Login";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
 import Navigation from "./Navigation";
+import LandingPage from "./components/LandingPage";
 
 class App extends Component {
   constructor(props) {
@@ -18,9 +19,10 @@ class App extends Component {
     return (
       <div>
         <Navigation />
+        <Route exact path="/" component={LandingPage} />
         <Route exact path="/sign_in" component={Login} />
         <Route exact path="/create_account" component={Register} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route exact path="/dashboard" component={Dashboard} />
       </div>
     );
   }
