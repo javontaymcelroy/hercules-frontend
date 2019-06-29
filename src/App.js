@@ -12,6 +12,7 @@ import LandingPage from "./components/LandingPage";
 import SingleExercise from "./components/SingleExercise";
 import Onboarding from "./components/Onboarding";
 import AddExercise from "./components/AddExercise";
+import EditExercise from "./components/EditExercise";
 
 class App extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class App extends Component {
         <Route exact path="/onboarding" component={Onboarding} />
         <Route exact path="/exercise/:id" component={SingleExercise} />
         <Route exact path="/add_exercise" component={AddExercise} />
+        <Route exact path="/exercise/:id/edit" component={EditExercise} />
       </div>
     );
   }

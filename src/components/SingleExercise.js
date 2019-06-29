@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import "./SCSS/singleExercise.scss";
@@ -42,6 +43,9 @@ class SingleExercise extends Component {
             className="hero-image"
             alt={exercise.exerciseTitle}
           />
+          <Link to={`/exercise/${this.state.id}/edit`}>
+            <h6>Edit</h6>
+          </Link>
         </div>
       </div>
     );

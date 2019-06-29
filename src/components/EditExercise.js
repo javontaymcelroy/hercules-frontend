@@ -4,12 +4,12 @@ import axios from "axios";
 
 import "./SCSS/addExercise.scss";
 
-class AddExercise extends Component {
+class EditExercise extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      addingExercise: {
-        user_id: localStorage.user_id,
+      editExercise: {
+        id: parseInt(this.props.match.params.id),
         exerciseTitle: "",
         date: "",
         description: "",
@@ -21,34 +21,64 @@ class AddExercise extends Component {
     };
   }
 
+  componentDidMount() {
+    axios
+      .get(
+        `https://hercules-backend.herokuapp.com/exercise/${parseInt(
+          this.props.match.params.id
+        )}`
+      )
+      .then(res => {
+        console.log(res);
+        this.setState({
+          editExercise: {
+            exerciseTitle: res.data.exerciseTitle,
+            date: res.data.date,
+            description: res.data.description,
+            targetRegionArea: res.data.targetRegionArea,
+            reps: res.data.reps,
+            amountLifted: res.data.amountLifted,
+            customImg: res.data.customImg
+          }
+        });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
+
   onSubmit = e => {
     e.preventDefault();
     axios
-      .post(
-        "https://hercules-backend.herokuapp.com/exercise",
-        this.state.addingExercise
+      .put(
+        `https://hercules-backend.herokuapp.com/exercise/${parseInt(
+          this.props.match.params.id
+        )}`,
+        this.state.editExercise
       )
       .then(() => {
-        this.props.history.push("/");
+        this.props.history.push(
+          `/exercise/${parseInt(this.props.match.params.id)}`
+        );
       })
       .catch(err => console.log(err));
   };
 
   handleChanges = e => {
     this.setState({
-      addingExercise: {
-        ...this.state.addingExercise,
+      editExercise: {
+        ...this.state.editExercise,
         [e.target.name]: e.target.value
       }
     });
   };
 
   render() {
-    const AddExercise = this.state.addingExercise;
+    const editExercise = this.state.editExercise;
     return (
       <div className="add-exercise-container">
         <div className="add-exercise-content">
-          <h1 className="page-title">Add An Exercise</h1>
+          <h1 className="page-title">Edit Exercise</h1>
           <form className="CRUD-form" onSubmit={this.onSubmit}>
             <h6>Exercise Title</h6>
             <input
@@ -56,7 +86,7 @@ class AddExercise extends Component {
               name="exerciseTitle"
               placeholder="e.g. Quick Hit Abs"
               onChange={this.handleChanges}
-              value={AddExercise.exerciseTitle}
+              value={editExercise.exerciseTitle}
             />
             <h6>Date</h6>
             <input
@@ -64,7 +94,7 @@ class AddExercise extends Component {
               name="date"
               placeholder="e.g. MM DD YYYY"
               onChange={this.handleChanges}
-              value={AddExercise.date}
+              value={editExercise.date}
             />
             <h6>Description</h6>
             <input
@@ -73,7 +103,7 @@ class AddExercise extends Component {
               placeholder="Write a description for the workout."
               className="description"
               onChange={this.handleChanges}
-              value={AddExercise.description}
+              value={editExercise.description}
             />
             <h6>Target Region Area</h6>
             <input
@@ -81,7 +111,7 @@ class AddExercise extends Component {
               name="targetRegionArea"
               placeholder="Legs"
               onChange={this.handleChanges}
-              value={AddExercise.targetRegionArea}
+              value={editExercise.targetRegionArea}
             />
             <div className="rep-lift-flex">
               <div>
@@ -91,7 +121,7 @@ class AddExercise extends Component {
                   name="reps"
                   placeholder="00"
                   onChange={this.handleChanges}
-                  value={AddExercise.reps}
+                  value={editExercise.reps}
                 />
               </div>
               <h1>AND</h1>
@@ -102,7 +132,7 @@ class AddExercise extends Component {
                   name="amountLifted"
                   placeholder="00"
                   onChange={this.handleChanges}
-                  value={AddExercise.amountLifted}
+                  value={editExercise.amountLifted}
                 />
               </div>
             </div>
@@ -112,10 +142,10 @@ class AddExercise extends Component {
               name="customImg"
               placeholder="Copy and paste an IMG url here."
               onChange={this.handleChanges}
-              value={AddExercise.customImg}
+              value={editExercise.customImg}
             />
             <button type="submit" className="CRUD-btn">
-              Create exercise
+              Confirm Changes
             </button>
           </form>
         </div>
@@ -124,4 +154,4 @@ class AddExercise extends Component {
   }
 }
 
-export default AddExercise;
+export default EditExercise;
