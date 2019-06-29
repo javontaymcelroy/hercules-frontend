@@ -3,7 +3,7 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-import back from "./components/assets/Back.svg";
+import back from "./components/assets/Back_arrow.svg";
 
 class Login extends Component {
   constructor(props) {

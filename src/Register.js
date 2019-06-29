@@ -5,7 +5,7 @@ import axios from "axios";
 
 import "./components/SCSS/onboarding.scss";
 
-import back from "./components/assets/Back.svg";
+import back from "./components/assets/Back_arrow.svg";
 
 class Register extends Component {
   constructor(props) {
