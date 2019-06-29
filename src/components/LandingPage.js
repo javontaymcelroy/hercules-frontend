@@ -6,7 +6,6 @@ import videoBackground from "./assets/video_background.mp4";
 import down from "./assets/chevrons-down.svg";
 
 import "./SCSS/landingpage.scss";
-import ReactPlayer from "react-player";
 
 class LandingPage extends Component {
   constructor(props) {
@@ -57,18 +56,12 @@ class LandingPage extends Component {
           <span className="border" />
         </div>
         <div className="video-container">
-          <ReactPlayer
-            url={videoBackground}
-            width="100%"
-            height="106.8vh"
-            pip={true}
-            controls={false}
-            className="hero-video"
-            playing={true}
+          <video
+            src={videoBackground}
+            autoPlay={true}
+            muted
             loop={true}
-            style={{
-              filter: "brightness(50%)"
-            }}
+            className="hero-video"
           />
         </div>
       </div>
