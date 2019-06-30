@@ -1,11 +1,13 @@
 import React from "react";
 import { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import moment from "moment";
 import axios from "axios";
 
 import "./SCSS/singleExercise.scss";
 
 import go from "./assets/go.svg";
+import back from "./assets/Back_arrow.svg";
 
 class SingleExercise extends Component {
   constructor(props) {
@@ -49,6 +51,12 @@ class SingleExercise extends Component {
     const exercise = this.state.exercise;
     return (
       <div className="single-exercise-container">
+        <img
+          src={back}
+          alt="back"
+          className="back"
+          onClick={this.props.history.goBack}
+        />
         <Link to={`/exercise/${this.state.id}/track_progress`}>
           <img src={go} className="go" alt="start exercise" />
         </Link>
@@ -67,7 +75,11 @@ class SingleExercise extends Component {
             alt={exercise.exerciseTitle}
           />
           <div className="date-crud-container">
-            <h6>Date created: {exercise.date}</h6>
+            <h6>
+              Date created:{" "}
+              {moment(exercise.date, "YYYY-MM-DD").format("MMMM DD YYYY")}
+            </h6>
+
             <div className="edit-del-flex">
               <Link to={`/exercise/${this.state.id}/edit`} className="links">
                 <h6>Edit</h6>
@@ -89,7 +101,9 @@ class SingleExercise extends Component {
                 <h2>DATE</h2>
                 {this.state.progressTracking.map(data => (
                   <>
-                    <p>{data.date}</p>
+                    <p>
+                      {moment(data.date, "YYYY-MM-DD").format("MMMM DD YYYY")}
+                    </p>
                   </>
                 ))}
               </div>
@@ -117,4 +131,4 @@ class SingleExercise extends Component {
   }
 }
 
-export default SingleExercise;
+export default withRouter(SingleExercise);

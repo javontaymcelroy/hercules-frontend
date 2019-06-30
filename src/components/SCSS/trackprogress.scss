@@ -8,7 +8,7 @@
 
   .track-progress-content {
     width: 50%;
-    margin: 10% auto 0;
+    margin: 8% auto 0;
     text-align: center;
 
     .heading {
@@ -35,13 +35,17 @@
       .track-btn {
         background: #ffec42;
         border: none;
-        margin-top: 5%;
         padding: 4% 6%;
         width: 52%;
         font-weight: bold;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
-        margin: 5% auto 0;
+        margin: 2% auto 0;
+      }
+
+      .track-btn:hover {
+        background: white;
+        color: black;
       }
 
       h6 {
@@ -85,6 +89,10 @@
           text-align: center;
           font-size: 5rem;
         }
+
+        input:focus {
+          border: 1px solid #ffec42;
+        }
       }
 
       .arrow-container {
@@ -115,12 +123,23 @@
           }
         }
       }
-      .date {
+      .date-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         width: 52%;
-        height: 10vh;
-        margin: 0 auto;
-        font-size: 2rem;
-        text-align: center;
+        margin: 2% auto 0;
+
+        .date {
+          width: 73%;
+          height: 5vh;
+          font-size: 1rem;
+          letter-spacing: 2px;
+        }
+
+        .date:focus {
+          border: 1px solid #ffec42;
+        }
       }
     }
   }

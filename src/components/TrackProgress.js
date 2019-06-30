@@ -1,11 +1,13 @@
 import React from "react";
 import { Component } from "react";
+import { withRouter } from "react-router-dom";
 import axios from "axios";
 
 import "./SCSS/trackprogress.scss";
 
 import down from "./assets/click_down.svg";
 import up from "./assets/click_up.svg";
+import back from "./assets/Back_arrow.svg";
 
 class TrackProgress extends Component {
   constructor(props) {
@@ -53,74 +55,52 @@ class TrackProgress extends Component {
     });
   };
 
-  repsIncrease = () => {
-    this.setState({
-      trackProgress: {
-        reps: this.state.trackProgress.reps + 1
-      }
-    });
+  reps = event => {
+    if (event.target.name === "incrementReps") {
+      this.setState({
+        trackProgress: {
+          ...this.state.trackProgress,
+          reps: this.state.trackProgress.reps + 1
+        }
+      });
+    } else if (event.target.name === "decrementReps") {
+      this.setState({
+        trackProgress: {
+          ...this.state.trackProgress,
+          reps: this.state.trackProgress.reps - 1
+        }
+      });
+    }
   };
 
-  repsDecrease = () => {
-    this.setState({
-      trackProgress: {
-        reps: this.state.trackProgress.reps - 1
-      }
-    });
+  amountLifted = event => {
+    if (event.target.name === "incrementLifted") {
+      this.setState({
+        trackProgress: {
+          ...this.state.trackProgress,
+          amountLifted: this.state.trackProgress.amountLifted + 1
+        }
+      });
+    } else if (event.target.name === "decrementLifted") {
+      this.setState({
+        trackProgress: {
+          ...this.state.trackProgress,
+          amountLifted: this.state.trackProgress.amountLifted - 1
+        }
+      });
+    }
   };
-
-  amountLiftedIncrease = () => {
-    this.setState({
-      trackProgress: {
-        amountLifted: this.state.trackProgress.amountLifted + 1
-      }
-    });
-  };
-
-  amountLiftedDecrease = () => {
-    this.setState({
-      trackProgress: {
-        amountLifted: this.state.trackProgress.amountLifted - 1
-      }
-    });
-  };
-
-  // reps = event => {
-  //   if (event.target.name === "incrementReps") {
-  //     this.setState({
-  //       trackProgress: {
-  //         reps: this.state.trackProgress.reps + 1
-  //       }
-  //     });
-  //   } else if (event.target.name === "decrementReps") {
-  //     this.setState({
-  //       trackProgress: {
-  //         reps: this.state.trackProgress.reps - 1
-  //       }
-  //     });
-  //   }
-  // };
-
-  // amountLifted = event => {
-  //   if (event.target.name === "incrementLifted") {
-  //     this.setState({
-  //       trackProgress: {
-  //         amountLifted: this.state.trackProgress.amountLifted + 1
-  //       }
-  //     });
-  //   } else if (event.target.name === "decrementLifted") {
-  //     this.setState({
-  //       trackProgress: {
-  //         amountLifted: this.state.trackProgress.amountLifted - 1
-  //       }
-  //     });
-  //   }
-  // };
 
   render() {
     return (
       <div className="track-progress-container">
         <div className="track-progress-content">
+          <img
+            src={back}
+            alt="back"
+            className="back"
+            onClick={this.props.history.goBack}
+          />
           <div className="heading">
             <h1>Start Tracking</h1>
             <h2>{this.state.exercise.exerciseTitle}</h2>
@@ -157,13 +137,13 @@ class TrackProgress extends Component {
                   className={
                     this.state.trackProgress.reps === 0 ? "inactive" : ""
                   }
-                  onClick={this.repsDecrease}
+                  onClick={this.reps}
                 />
                 <img
                   src={up}
                   alt="increase"
                   name="incrementReps"
-                  onClick={this.repsIncrease}
+                  onClick={this.reps}
                 />
               </div>
               <div className="lift-arrows">
@@ -171,7 +151,7 @@ class TrackProgress extends Component {
                   src={down}
                   alt="decrease"
                   name="decrementLifted"
-                  onClick={this.amountLiftedDecrease}
+                  onClick={this.amountLifted}
                   className={
                     this.state.trackProgress.amountLifted === 0
                       ? "inactive"
@@ -182,19 +162,21 @@ class TrackProgress extends Component {
                   src={up}
                   alt="increase"
                   name="incrementLifted"
-                  onClick={this.amountLiftedIncrease}
+                  onClick={this.amountLifted}
                 />
               </div>
             </div>
-            <h6>Date</h6>
-            <input
-              name="date"
-              type="date"
-              placeholder="e.g. June 11, 2019"
-              value={this.state.trackProgress.date}
-              onChange={this.handleChanges}
-              className="date"
-            />
+            <div className="date-flex">
+              <h6>Date</h6>
+              <input
+                name="date"
+                type="date"
+                placeholder="e.g. June 11, 2019"
+                value={this.state.trackProgress.date}
+                onChange={this.handleChanges}
+                className="date"
+              />
+            </div>
             <button type="submit" className="track-btn">
               TRACK EXERCISE
             </button>
@@ -205,4 +187,4 @@ class TrackProgress extends Component {
   }
 }
 
-export default TrackProgress;
+export default withRouter(TrackProgress);
