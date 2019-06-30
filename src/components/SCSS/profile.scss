@@ -43,6 +43,7 @@
       grid-row-gap: 2vh;
       justify-content: center;
       margin-bottom: 5%;
+
       .image-links {
         .image-content {
           position: relative;
@@ -66,7 +67,7 @@
             height: 40vh;
             object-fit: cover;
             object-position: center;
-            filter: brightness(50%);
+            filter: brightness(70%);
             cursor: pointer;
             transition: all 0.2s ease-in-out;
           }

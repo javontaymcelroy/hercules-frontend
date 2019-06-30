@@ -74,6 +74,15 @@ class EditExercise extends Component {
     });
   };
 
+  handleChange(e) {
+    this.setState({
+      editExercise: {
+        ...this.state.editExercise,
+        targetRegionArea: e.target.value
+      }
+    });
+  }
+
   render() {
     const editExercise = this.state.editExercise;
     return (
@@ -107,13 +116,20 @@ class EditExercise extends Component {
               value={editExercise.description}
             />
             <h6>Target Region Area</h6>
-            <input
-              type="text"
+            <select
               name="targetRegionArea"
-              placeholder="Legs"
-              onChange={this.handleChanges}
+              onChange={this.handleChange.bind(this)}
               value={editExercise.targetRegionArea}
-            />
+            >
+              <option value="Biceps">Biceps</option>
+              <option value="Triceps">Triceps</option>
+              <option value="Legs">Legs</option>
+              <option value="Shoulders">Shoulders</option>
+              <option value="Back">Back</option>
+              <option value="Abs">Abs</option>
+              <option value="Glutes">Glutes</option>
+              <option value="None">None</option>
+            </select>
             <div className="rep-lift-flex">
               <div>
                 <h6>Repititions</h6>

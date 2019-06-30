@@ -67,7 +67,13 @@ class SingleExercise extends Component {
         case "Shoulders":
           regionResult = require("./assets/Shoulders.svg");
           break;
-        case null:
+        case "Abs":
+          regionResult = require("./assets/Abs.svg");
+          break;
+        case "Glutes":
+          regionResult = require("./assets/Glutes.svg");
+          break;
+        case "None":
           regionResult = require("./assets/none.svg");
           break;
       }
