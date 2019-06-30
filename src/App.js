@@ -13,6 +13,7 @@ import SingleExercise from "./components/SingleExercise";
 import Onboarding from "./components/Onboarding";
 import AddExercise from "./components/AddExercise";
 import EditExercise from "./components/EditExercise";
+import TrackProgress from "./components/TrackProgress";
 
 class App extends Component {
   constructor(props) {
@@ -36,6 +37,11 @@ class App extends Component {
         <Route exact path="/exercise/:id" component={SingleExercise} />
         <Route exact path="/add_exercise" component={AddExercise} />
         <Route exact path="/exercise/:id/edit" component={EditExercise} />
+        <Route
+          exact
+          path="/exercise/:id/track_progress"
+          component={TrackProgress}
+        />
       </div>
     );
   }

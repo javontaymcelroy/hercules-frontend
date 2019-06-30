@@ -91,7 +91,7 @@ class EditExercise extends Component {
             />
             <h6>Date</h6>
             <input
-              type="text"
+              type="date"
               name="date"
               placeholder="e.g. MM DD YYYY"
               onChange={this.handleChanges}

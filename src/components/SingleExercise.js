@@ -13,7 +13,8 @@ class SingleExercise extends Component {
     this.state = {
       id: parseInt(this.props.match.params.id),
       exercise: [],
-      targetRegionArea: "none"
+      targetRegionArea: "none",
+      progressTracking: []
     };
   }
 
@@ -21,6 +22,15 @@ class SingleExercise extends Component {
     axios
       .get(`https://hercules-backend.herokuapp.com/exercise/${this.state.id}`)
       .then(res => this.setState({ exercise: res.data }))
+      .catch(err => console.log(err));
+
+    axios
+      .get(
+        `https://hercules-backend.herokuapp.com/exercise/${
+          this.state.id
+        }/progressTracking`
+      )
+      .then(res => this.setState({ progressTracking: res.data }))
       .catch(err => console.log(err));
   }
 
@@ -39,8 +49,10 @@ class SingleExercise extends Component {
     const exercise = this.state.exercise;
     return (
       <div className="single-exercise-container">
-        <div className="exercise-content-container">
+        <Link to={`/exercise/${this.state.id}/track_progress`}>
           <img src={go} className="go" alt="start exercise" />
+        </Link>
+        <div className="exercise-content-container">
           <div className="hero-section">
             <h1>{exercise.exerciseTitle}</h1>
             <div className="exercise-reps-lifted">
@@ -69,6 +81,35 @@ class SingleExercise extends Component {
           <div className="desc-container">
             <h2>Description</h2>
             <p>{exercise.description}</p>
+          </div>
+          <div className="progress-tracking-container">
+            <h1>Progress Tracking</h1>
+            <div className="progress-tracking-flex">
+              <div className="column left">
+                <h2>DATE</h2>
+                {this.state.progressTracking.map(data => (
+                  <>
+                    <p>{data.date}</p>
+                  </>
+                ))}
+              </div>
+              <div className="column center">
+                <h2>REPS</h2>
+                {this.state.progressTracking.map(data => (
+                  <>
+                    <p>{data.reps}</p>
+                  </>
+                ))}
+              </div>
+              <div className="column right">
+                <h2>AMOUNT LIFTED</h2>
+                {this.state.progressTracking.map(data => (
+                  <>
+                    <p>{data.amountLifted}</p>
+                  </>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

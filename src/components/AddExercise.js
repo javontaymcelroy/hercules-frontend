@@ -60,8 +60,8 @@ class AddExercise extends Component {
             />
             <h6>Date</h6>
             <input
-              type="text"
               name="date"
+              type="date"
               placeholder="e.g. MM DD YYYY"
               onChange={this.handleChanges}
               value={AddExercise.date}
