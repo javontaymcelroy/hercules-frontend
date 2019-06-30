@@ -1,5 +1,6 @@
 import React from "react";
 import { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import "./SCSS/addExercise.scss";
@@ -147,6 +148,9 @@ class EditExercise extends Component {
             <button type="submit" className="CRUD-btn">
               Confirm Changes
             </button>
+            <Link to={`/exercise/${parseInt(this.props.match.params.id)}`}>
+              <button className="CRUD-btn cancel-btn">Cancel</button>
+            </Link>
           </form>
         </div>
       </div>

@@ -24,6 +24,17 @@ class SingleExercise extends Component {
       .catch(err => console.log(err));
   }
 
+  delete = e => {
+    e.preventDefault();
+    axios
+      .delete(
+        "https://hercules-backend.herokuapp.com/exercise/" + this.state.id
+      )
+      .then(() => {
+        this.props.history.push("/");
+      });
+  };
+
   render() {
     const exercise = this.state.exercise;
     return (
@@ -43,9 +54,22 @@ class SingleExercise extends Component {
             className="hero-image"
             alt={exercise.exerciseTitle}
           />
-          <Link to={`/exercise/${this.state.id}/edit`}>
-            <h6>Edit</h6>
-          </Link>
+          <div className="date-crud-container">
+            <h6>Date created: {exercise.date}</h6>
+            <div className="edit-del-flex">
+              <Link to={`/exercise/${this.state.id}/edit`} className="links">
+                <h6>Edit</h6>
+              </Link>
+              <p>|</p>
+              <h6 onClick={this.delete} className="delete">
+                Delete
+              </h6>
+            </div>
+          </div>
+          <div className="desc-container">
+            <h2>Description</h2>
+            <p>{exercise.description}</p>
+          </div>
         </div>
       </div>
     );
