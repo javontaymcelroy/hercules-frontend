@@ -24,6 +24,7 @@ class Login extends Component {
         localStorage.setItem("token", res.data.token);
         localStorage.setItem("user_id", res.data.id);
         this.props.history.push("/");
+        window.location.reload();
       })
       .catch(err => console.log(err));
   };

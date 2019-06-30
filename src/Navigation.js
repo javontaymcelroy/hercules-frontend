@@ -11,8 +11,8 @@ class Navigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInfo: [],
-      userId: localStorage.getItem("user_id")
+      userId: localStorage.getItem("user_id"),
+      userInfo: []
     };
   }
 
@@ -26,8 +26,10 @@ class Navigation extends Component {
   render() {
     const signOut = () => {
       localStorage.removeItem("token");
+      localStorage.removeItem("user_id");
       this.props.history.push("/");
     };
+
     return (
       <div className="navigation-container">
         <Link to="/">
@@ -58,7 +60,7 @@ class Navigation extends Component {
             </NavLink>
           ) : null}
 
-          {localStorage.token ? (
+          {localStorage.user_id ? (
             <NavLink to="/profile" className="links">
               {this.state.userInfo.firstName}
               <span> </span>
