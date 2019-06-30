@@ -76,7 +76,7 @@ class AddExercise extends Component {
               value={AddExercise.date}
             />
             <h6>Description</h6>
-            <input
+            <textarea
               type="text"
               name="description"
               placeholder="Write a description for the workout."

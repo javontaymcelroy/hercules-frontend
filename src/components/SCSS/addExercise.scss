@@ -47,6 +47,25 @@
         outline: #ffec42;
       }
 
+      textarea {
+        padding: 3% 2%;
+        width: 95%;
+        height: 20vh;
+        background: none;
+        color: white;
+        border: 1px solid #323232;
+        font-size: 0.8rem;
+      }
+
+      textarea::placeholder {
+        font-size: 0.8rem;
+      }
+
+      textarea:focus {
+        border: 1px solid #ffec42;
+        outline: #ffec42;
+      }
+
       .rep-lift-flex {
         display: flex;
         width: 100%;
