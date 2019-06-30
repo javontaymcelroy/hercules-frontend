@@ -61,7 +61,6 @@
     .page-buttons-container {
       display: flex;
       justify-content: space-between;
-      width: 10%;
 
       .page_btns {
         background: white;
@@ -69,6 +68,7 @@
         cursor: pointer;
         transition: all 0.2s ease-in-out;
         user-select: none;
+        margin-left: 2vh;
       }
 
       .page_btns:hover {

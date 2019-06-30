@@ -39,7 +39,7 @@ class Profile extends Component {
     return (
       <div className="profile-page-container">
         <div className="profile-page-content">
-          <h1 className="welcome">Welcome Back, {userInfo.firstName} </h1>
+          <h1 className="welcome">Welcome Back, {userInfo.firstName} 👋</h1>
           <div className="exercises-container">
             <div className="top-header-flex">
               <h1>Your exercises</h1>
