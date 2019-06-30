@@ -89,15 +89,20 @@ class SingleExercise extends Component {
               <p>Previously lifted: {exercise.amountLifted}</p>
             </div>
           </div>
-          <img
-            src={exercise.customImg}
+          <div
             className="hero-image"
-            alt={exercise.exerciseTitle}
+            style={{
+              objectFit: "cover",
+              backgroundAttachment: "fixed",
+              backgroundImage: `url(${exercise.customImg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}
           />
           <div className="date-crud-container">
             <h6>
               Date created:{" "}
-              {moment(exercise.date, "YYYY-MM-DD").format("MMMM DD YYYY")}
+              {moment(exercise.date, "mm-dd-yyyy").format("MMMM DD YYYY")}
             </h6>
 
             <div className="edit-del-flex">
@@ -127,7 +132,7 @@ class SingleExercise extends Component {
                   {this.state.progressTracking.map(data => (
                     <>
                       <p>
-                        {moment(data.date, "YYYY-MM-DD").format("MMMM DD YYYY")}
+                        {moment(data.date, "mm-dd-yyyy").format("MMMM DD YYYY")}
                       </p>
                     </>
                   ))}
