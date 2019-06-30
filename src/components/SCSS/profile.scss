@@ -37,26 +37,25 @@
 
     .exercise-flex {
       width: 100%;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 2vh;
 
       .image-links {
-        margin-right: 2%;
         .image-content {
           position: relative;
           width: max-content;
-          margin-right: 2%;
 
           h1 {
             position: absolute;
-            top: 40%;
-            width: 90%;
-            left: 0;
-            right: 0;
+            width: 100%;
             margin: 0 auto;
+            top: 50%;
+            transform: translateY(-50%);
             text-align: center;
             z-index: 100;
             pointer-events: none;
+            font-size: 1.5rem;
           }
 
           .exercise-img {
@@ -65,13 +64,13 @@
             height: 40vh;
             object-fit: cover;
             object-position: center;
-            opacity: 0.8;
+            filter: brightness(50%);
             cursor: pointer;
             transition: all 0.2s ease-in-out;
           }
 
           .exercise-img:hover {
-            opacity: 1;
+            filter: brightness(90%);
           }
         }
       }
