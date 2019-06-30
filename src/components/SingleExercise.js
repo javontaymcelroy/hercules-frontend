@@ -7,9 +7,6 @@ import axios from "axios";
 import "./SCSS/singleExercise.scss";
 
 import go from "./assets/go.svg";
-import back from "./assets/Back_arrow.svg";
-import Legs from "./assets/Legs.svg";
-import Back from "./assets/Back.svg";
 
 class SingleExercise extends Component {
   constructor(props) {
@@ -80,12 +77,6 @@ class SingleExercise extends Component {
     const exercise = this.state.exercise;
     return (
       <div className="single-exercise-container">
-        <img
-          src={back}
-          alt="back"
-          className="back"
-          onClick={this.props.history.goBack}
-        />
         <Link to={`/exercise/${this.state.id}/track_progress`}>
           <img src={go} className="go" alt="start exercise" />
         </Link>

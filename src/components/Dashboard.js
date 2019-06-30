@@ -53,7 +53,9 @@ class Dashboard extends Component {
               <img src={accent} className="accent" alt="accent" />
               <h2>Community Exercises</h2>
               <h1 className="exercise-title">{content.exerciseTitle}</h1>
-              <p className="exercise-desc">{content.description}</p>
+              <p className="exercise-desc">
+                {content.description.slice(0, 350)}...
+              </p>
               <div className="rep-lifted-flex">
                 <p>Previous Reps: {content.reps}</p>
                 <p>|</p>
