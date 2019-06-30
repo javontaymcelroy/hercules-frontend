@@ -27,8 +27,8 @@ class LandingPage extends Component {
             <div className="content-1">
               <h6>MICAH GABRIEL</h6>
               <p>
-                “Hercules is the dopest, easiest workout out to use and to track
-                track your progress.”
+                “Hercules is the dopest, easiest workout app to use to track
+                your workout progress!”
               </p>
             </div>
             <div className="content-2">
