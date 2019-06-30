@@ -12,6 +12,11 @@
     left: 0;
     right: 0;
     margin: 0 auto;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .go:hover {
+    filter: brightness(110%);
   }
 
   .exercise-content-container {
@@ -107,35 +112,48 @@
       }
     }
 
-    .progress-tracking-container {
-      width: 40%;
+    .target-progress-flex {
+      display: flex;
+      justify-content: space-between;
+      width: 70%;
       margin: 0 auto;
-      margin-bottom: 10%;
+      margin-bottom: 5%;
 
-      h1 {
-        text-align: center;
-        color: #ffec42;
-      }
-
-      h2 {
-        color: white;
-        font-family: "Oswald", sans-serif;
-      }
-
-      .progress-tracking-flex {
-        display: flex;
-        justify-content: space-between;
-
-        .left {
-          text-align: left;
+      .target-region-container {
+        h1 {
+          color: #ffec42;
         }
+      }
 
-        .center {
+      .progress-tracking-container {
+        width: 40%;
+        margin-bottom: 10%;
+
+        h1 {
           text-align: center;
+          color: #ffec42;
         }
 
-        .right {
-          text-align: right;
+        h2 {
+          color: white;
+          font-family: "Oswald", sans-serif;
+        }
+
+        .progress-tracking-flex {
+          display: flex;
+          justify-content: space-between;
+
+          .left {
+            text-align: left;
+          }
+
+          .center {
+            text-align: center;
+          }
+
+          .right {
+            text-align: right;
+          }
         }
       }
     }

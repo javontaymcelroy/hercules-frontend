@@ -8,6 +8,8 @@ import "./SCSS/singleExercise.scss";
 
 import go from "./assets/go.svg";
 import back from "./assets/Back_arrow.svg";
+import Legs from "./assets/Legs.svg";
+import Back from "./assets/Back.svg";
 
 class SingleExercise extends Component {
   constructor(props) {
@@ -15,7 +17,6 @@ class SingleExercise extends Component {
     this.state = {
       id: parseInt(this.props.match.params.id),
       exercise: [],
-      targetRegionArea: "none",
       progressTracking: []
     };
   }
@@ -48,6 +49,34 @@ class SingleExercise extends Component {
   };
 
   render() {
+    const targetRegion = type => {
+      let regionResult;
+      switch (type) {
+        case "Legs":
+          regionResult = require("./assets/Legs.svg");
+          break;
+        case "Back":
+          regionResult = require("./assets/Back.svg");
+          break;
+        case "Chest":
+          regionResult = require("./assets/Chest.svg");
+          break;
+        case "Biceps":
+          regionResult = require("./assets/Biceps.svg");
+          break;
+        case "Triceps":
+          regionResult = require("./assets/Triceps.svg");
+          break;
+        case "Shoulders":
+          regionResult = require("./assets/Shoulders.svg");
+          break;
+        case null:
+          regionResult = require("./assets/none.svg");
+          break;
+      }
+      return regionResult;
+    };
+
     const exercise = this.state.exercise;
     return (
       <div className="single-exercise-container">
@@ -94,34 +123,40 @@ class SingleExercise extends Component {
             <h2>Description</h2>
             <p>{exercise.description}</p>
           </div>
-          <div className="progress-tracking-container">
-            <h1>Progress Tracking</h1>
-            <div className="progress-tracking-flex">
-              <div className="column left">
-                <h2>DATE</h2>
-                {this.state.progressTracking.map(data => (
-                  <>
-                    <p>
-                      {moment(data.date, "YYYY-MM-DD").format("MMMM DD YYYY")}
-                    </p>
-                  </>
-                ))}
-              </div>
-              <div className="column center">
-                <h2>REPS</h2>
-                {this.state.progressTracking.map(data => (
-                  <>
-                    <p>{data.reps}</p>
-                  </>
-                ))}
-              </div>
-              <div className="column right">
-                <h2>AMOUNT LIFTED</h2>
-                {this.state.progressTracking.map(data => (
-                  <>
-                    <p>{data.amountLifted}</p>
-                  </>
-                ))}
+          <div className="target-progress-flex">
+            <div className="target-region-container">
+              <h1>Target Region Area</h1>
+              <img src={targetRegion(exercise.targetRegionArea)} />
+            </div>
+            <div className="progress-tracking-container">
+              <h1>Progress Tracking</h1>
+              <div className="progress-tracking-flex">
+                <div className="column left">
+                  <h2>DATE</h2>
+                  {this.state.progressTracking.map(data => (
+                    <>
+                      <p>
+                        {moment(data.date, "YYYY-MM-DD").format("MMMM DD YYYY")}
+                      </p>
+                    </>
+                  ))}
+                </div>
+                <div className="column center">
+                  <h2>REPS</h2>
+                  {this.state.progressTracking.map(data => (
+                    <>
+                      <p>{data.reps}</p>
+                    </>
+                  ))}
+                </div>
+                <div className="column right">
+                  <h2>AMOUNT LIFTED</h2>
+                  {this.state.progressTracking.map(data => (
+                    <>
+                      <p>{data.amountLifted}</p>
+                    </>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
