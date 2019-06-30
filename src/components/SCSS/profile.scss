@@ -20,6 +20,7 @@
     .top-header-flex {
       display: flex;
       justify-content: space-between;
+      justify-items: center;
       width: 100%;
 
       h1 {
@@ -38,13 +39,14 @@
     .exercise-flex {
       width: 100%;
       display: grid;
-      grid-template-columns: 0fr 0fr 0fr 0fr;
-      grid-gap: 2vh;
-
+      grid-template-columns: repeat(4, 42.5vh);
+      grid-row-gap: 2vh;
+      justify-content: center;
+      margin-bottom: 5%;
       .image-links {
         .image-content {
           position: relative;
-          width: max-content;
+          width: 40vh;
 
           h1 {
             position: absolute;
@@ -60,7 +62,7 @@
 
           .exercise-img {
             position: relative;
-            width: 40vh;
+            width: 100%;
             height: 40vh;
             object-fit: cover;
             object-position: center;
