@@ -1,0 +1,80 @@
+.profile-page-container {
+  background: black;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: max-content;
+
+  .profile-page-content {
+    position: relative;
+    top: 12vh;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 95%;
+
+    .welcome {
+      text-align: center;
+    }
+
+    .top-header-flex {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      h1 {
+        color: #ffec42;
+      }
+
+      .add {
+        filter: brightness(90%);
+        transition: all 0.2s ease-in-out;
+      }
+      .add:hover {
+        filter: brightness(100%);
+      }
+    }
+
+    .exercise-flex {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .image-links {
+        margin-right: 2%;
+        .image-content {
+          position: relative;
+          width: max-content;
+          margin-right: 2%;
+
+          h1 {
+            position: absolute;
+            top: 40%;
+            width: 90%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            text-align: center;
+            z-index: 100;
+            pointer-events: none;
+          }
+
+          .exercise-img {
+            position: relative;
+            width: 40vh;
+            height: 40vh;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.8;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+          }
+
+          .exercise-img:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

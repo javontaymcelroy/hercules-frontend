@@ -1,8 +1,11 @@
 import React from "react";
 import { Component } from "react";
+import { withRouter } from "react-router-dom";
 import axios from "axios";
 
 import "./SCSS/addExercise.scss";
+
+import back from "./assets/Back_arrow.svg";
 
 class AddExercise extends Component {
   constructor(props) {
@@ -47,6 +50,12 @@ class AddExercise extends Component {
     const AddExercise = this.state.addingExercise;
     return (
       <div className="add-exercise-container">
+        <img
+          src={back}
+          alt="back"
+          className="back"
+          onClick={this.props.history.goBack}
+        />
         <div className="add-exercise-content">
           <h1 className="page-title">Add An Exercise</h1>
           <form className="CRUD-form" onSubmit={this.onSubmit}>
@@ -124,4 +133,4 @@ class AddExercise extends Component {
   }
 }
 
-export default AddExercise;
+export default withRouter(AddExercise);
