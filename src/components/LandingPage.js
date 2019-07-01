@@ -24,7 +24,7 @@ class LandingPage extends Component {
           </div>
           <div className="secondary-nav-container">
             <div className="secondary-nav">
-              <Link>About</Link>
+              <Link to="/about">About</Link>
               <a
                 href="https://www.linkedin.com/in/javontay-mcelroy-663b81bb/"
                 target="_blank"

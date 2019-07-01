@@ -15,6 +15,7 @@ import AddExercise from "./components/AddExercise";
 import EditExercise from "./components/EditExercise";
 import TrackProgress from "./components/TrackProgress";
 import Profile from "./components/Profile";
+import AboutPage from "./components/AboutPage";
 
 class App extends Component {
   constructor(props) {
@@ -44,6 +45,7 @@ class App extends Component {
           component={TrackProgress}
         />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/about" component={AboutPage} />
       </div>
     );
   }
