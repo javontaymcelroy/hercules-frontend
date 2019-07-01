@@ -3,7 +3,6 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 
 import videoBackground from "./assets/video_background.mp4";
-import down from "./assets/chevrons-down.svg";
 
 import "./SCSS/landingpage.scss";
 
@@ -23,7 +22,33 @@ class LandingPage extends Component {
               <button className="CTA-btn">Get started</button>
             </Link>
           </div>
-          <div className="hero-box-container">
+          <div className="secondary-nav-container">
+            <div className="secondary-nav">
+              <Link>About</Link>
+              <a
+                href="https://www.linkedin.com/in/javontay-mcelroy-663b81bb/"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/javontaymcelroy/hercules-frontend"
+                target="_blank"
+              >
+                Github
+              </a>
+              <a href="https://instagram.com/thekingmuze" target="_blank">
+                Instagram
+              </a>
+              <a href="https://twitter.com/thekingmuze" target="_blank">
+                Twitter
+              </a>
+              <a href="https://javontaymcelroy.com" target="_blank">
+                Portfolio
+              </a>
+            </div>
+          </div>
+          {/* <div className="hero-box-container">
             <div className="content-1">
               <h6>MICAH GABRIEL</h6>
               <p>
@@ -41,9 +66,8 @@ class LandingPage extends Component {
             <div className="content-3">
               <h6>Contact Us</h6>
             </div>
-          </div>
+          </div> */}
         </div>
-        <img src={down} className="down" alt="go down" />
         <div className="borders">
           <span className="border" />
           <span className="border" />
