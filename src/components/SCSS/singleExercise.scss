@@ -124,6 +124,12 @@
       .target-region-container {
         h1 {
           color: #ffec42;
+          width: 100%;
+          text-align: center;
+        }
+
+        .target-body {
+          width: 60vh;
         }
       }
 

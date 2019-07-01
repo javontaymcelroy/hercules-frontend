@@ -3,6 +3,8 @@ import { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import moment from "moment";
 import axios from "axios";
+import { AreaChart, LineChart } from "react-chartkick";
+import "chart.js";
 
 import "./SCSS/singleExercise.scss";
 
@@ -30,7 +32,11 @@ class SingleExercise extends Component {
           this.state.id
         }/progressTracking`
       )
-      .then(res => this.setState({ progressTracking: res.data }))
+      .then(res =>
+        this.setState({
+          progressTracking: res.data
+        })
+      )
       .catch(err => console.log(err));
   }
 
@@ -81,6 +87,16 @@ class SingleExercise extends Component {
     };
 
     const exercise = this.state.exercise;
+    const result = {};
+    const date = this.state.progressTracking.forEach(item => {
+      return (result[`${item.date}`] = item.reps);
+    });
+
+    const resultLifted = {};
+    const lifted = this.state.progressTracking.forEach(item => {
+      return (resultLifted[`${item.date}`] = item.amountLifted);
+    });
+
     return (
       <div className="single-exercise-container">
         <Link to={`/exercise/${this.state.id}/track_progress`}>
@@ -128,37 +144,28 @@ class SingleExercise extends Component {
           <div className="target-progress-flex">
             <div className="target-region-container">
               <h1>Target Region Area</h1>
-              <img src={targetRegion(exercise.targetRegionArea)} />
+              <img
+                src={targetRegion(exercise.targetRegionArea)}
+                className="target-body"
+              />
             </div>
             <div className="progress-tracking-container">
               <h1>Progress Tracking</h1>
-              <div className="progress-tracking-flex">
-                <div className="column left">
-                  <h2>DATE</h2>
-                  {this.state.progressTracking.map(data => (
-                    <>
-                      <p>
-                        {moment(data.date, "mm-dd-yyyy").format("MMMM DD YYYY")}
-                      </p>
-                    </>
-                  ))}
-                </div>
-                <div className="column center">
-                  <h2>REPS</h2>
-                  {this.state.progressTracking.map(data => (
-                    <>
-                      <p>{data.reps}</p>
-                    </>
-                  ))}
-                </div>
-                <div className="column right">
-                  <h2>AMOUNT LIFTED</h2>
-                  {this.state.progressTracking.map(data => (
-                    <>
-                      <p>{data.amountLifted}</p>
-                    </>
-                  ))}
-                </div>
+              <div className="progress-graph">
+                <AreaChart
+                  data={{ ...result }}
+                  colors={["#ffec42"]}
+                  ytitle="Repetitions"
+                  xtitle="Date"
+                  curve={true}
+                />
+                <LineChart
+                  data={{ ...resultLifted }}
+                  colors={["#ffec42"]}
+                  ytitle="Amount Lifted"
+                  xtitle="Date"
+                  curve={true}
+                />
               </div>
             </div>
           </div>
