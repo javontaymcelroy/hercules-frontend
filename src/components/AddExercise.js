@@ -32,7 +32,7 @@ class AddExercise extends Component {
         this.state.addingExercise
       )
       .then(() => {
-        this.props.history.push("/");
+        this.props.history.push("/profile");
       })
       .catch(err => console.log(err));
   };
