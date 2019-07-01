@@ -3,7 +3,7 @@ import { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import moment from "moment";
 import axios from "axios";
-import { AreaChart, LineChart } from "react-chartkick";
+import { AreaChart, ColumnChart } from "react-chartkick";
 import "chart.js";
 
 import "./SCSS/singleExercise.scss";
@@ -152,20 +152,27 @@ class SingleExercise extends Component {
             <div className="progress-tracking-container">
               <h1>Progress Tracking</h1>
               <div className="progress-graph">
-                <AreaChart
-                  data={{ ...result }}
-                  colors={["#ffec42"]}
-                  ytitle="Repetitions"
-                  xtitle="Date"
-                  curve={true}
-                />
-                <LineChart
-                  data={{ ...resultLifted }}
-                  colors={["#ffec42"]}
-                  ytitle="Amount Lifted"
-                  xtitle="Date"
-                  curve={true}
-                />
+                <div className="reps-graph">
+                  <AreaChart
+                    data={{ ...result }}
+                    colors={["#ffec42"]}
+                    ytitle="Repetitions"
+                    xtitle="Date"
+                    curve={true}
+                    messages={{ empty: "No data" }}
+                  />
+                </div>
+                <div className="lifted-graph">
+                  <ColumnChart
+                    data={{ ...resultLifted }}
+                    colors={["#ffec42"]}
+                    ytitle="Amount Lifted"
+                    xtitle="Date"
+                    curve={true}
+                    className="column-chart"
+                    messages={{ empty: "No data" }}
+                  />
+                </div>
               </div>
             </div>
           </div>

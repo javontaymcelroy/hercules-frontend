@@ -119,7 +119,7 @@
       justify-content: space-between;
       width: 70%;
       margin: 0 auto;
-      margin-bottom: 5%;
+      margin-bottom: 1%;
 
       .target-region-container {
         h1 {
@@ -130,12 +130,13 @@
 
         .target-body {
           width: 60vh;
+          margin-top: 5%;
         }
       }
 
       .progress-tracking-container {
         width: 40%;
-        margin-bottom: 10%;
+        margin-bottom: 0%;
 
         h1 {
           text-align: center;
@@ -147,20 +148,14 @@
           font-family: "Oswald", sans-serif;
         }
 
-        .progress-tracking-flex {
-          display: flex;
-          justify-content: space-between;
-
-          .left {
-            text-align: left;
+        .progress-graph {
+          .reps-graph {
+            padding-bottom: 10%;
+            margin-top: 5%;
           }
-
-          .center {
-            text-align: center;
-          }
-
-          .right {
-            text-align: right;
+          .lifted-graph {
+            border-top: 1px solid #2d2d2d;
+            padding-top: 10%;
           }
         }
       }
