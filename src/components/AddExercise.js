@@ -67,7 +67,11 @@ class AddExercise extends Component {
         />
         <div className="add-exercise-content">
           <h1 className="page-title">Add An Exercise</h1>
-          <form className="CRUD-form" onSubmit={this.onSubmit}>
+          <form
+            className="CRUD-form"
+            onSubmit={this.onSubmit}
+            autoComplete="off"
+          >
             <h6>Exercise Title</h6>
             <input
               type="text"
@@ -75,6 +79,7 @@ class AddExercise extends Component {
               placeholder="e.g. Quick Hit Abs"
               onChange={this.handleChanges}
               value={AddExercise.exerciseTitle}
+              required={true}
             />
             <h6>Date</h6>
             <input
@@ -83,6 +88,7 @@ class AddExercise extends Component {
               placeholder="e.g. MM DD YYYY"
               onChange={this.handleChanges}
               value={AddExercise.date}
+              required={true}
             />
             <h6>Description</h6>
             <textarea
@@ -92,6 +98,7 @@ class AddExercise extends Component {
               className="description"
               onChange={this.handleChanges}
               value={AddExercise.description}
+              required={true}
             />
             <h6>Target Region Area</h6>
             <select
@@ -138,6 +145,7 @@ class AddExercise extends Component {
               placeholder="Copy and paste an IMG url here."
               onChange={this.handleChanges}
               value={AddExercise.customImg}
+              required={true}
             />
             <button type="submit" className="CRUD-btn">
               Create exercise

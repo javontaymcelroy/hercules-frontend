@@ -43,7 +43,11 @@ class Login extends Component {
 
     return (
       <div className="onboarding-container">
-        <form onSubmit={this.login} className="form-container">
+        <form
+          onSubmit={this.login}
+          className="form-container"
+          autoComplete="off"
+        >
           <h1 className="onboarding-title">Sign in</h1>
           <input
             type="text"
@@ -51,6 +55,7 @@ class Login extends Component {
             value={signIn.username}
             onChange={this.handleChanges}
             placeholder="username"
+            required={true}
           />
           <input
             type="password"
@@ -59,6 +64,7 @@ class Login extends Component {
             onChange={this.handleChanges}
             placeholder="password"
             className="password"
+            required={true}
           />
           <button type="submit" className="onboarding-btn">
             Let's go!

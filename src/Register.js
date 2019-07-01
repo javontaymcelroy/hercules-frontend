@@ -47,7 +47,11 @@ class Register extends Component {
     const registration = this.state.registration;
     return (
       <div className="onboarding-container">
-        <form onSubmit={this.register} className="form-container">
+        <form
+          onSubmit={this.register}
+          className="form-container"
+          autoComplete="off"
+        >
           <h1 className="onboarding-title">Create an account</h1>
           <input
             type="text"
@@ -55,6 +59,7 @@ class Register extends Component {
             placeholder="username"
             value={registration.username}
             onChange={this.handleChanges}
+            required={true}
           />
           <input
             type="text"
@@ -62,6 +67,7 @@ class Register extends Component {
             placeholder="first name"
             value={registration.firstName}
             onChange={this.handleChanges}
+            required={true}
           />
           <input
             type="text"
@@ -69,6 +75,7 @@ class Register extends Component {
             placeholder="last name"
             value={registration.lastName}
             onChange={this.handleChanges}
+            required={true}
           />
           <input
             type="text"
@@ -76,6 +83,7 @@ class Register extends Component {
             placeholder="email address"
             value={registration.emailAddress}
             onChange={this.handleChanges}
+            required={true}
           />
           <input
             type="password"
@@ -84,6 +92,7 @@ class Register extends Component {
             value={registration.password}
             onChange={this.handleChanges}
             className="password"
+            required={true}
           />
           <button type="submit" className="onboarding-btn">
             Let's go!
