@@ -145,7 +145,6 @@ class AddExercise extends Component {
               placeholder="Copy and paste an IMG url here."
               onChange={this.handleChanges}
               value={AddExercise.customImg}
-              required={true}
             />
             <button type="submit" className="CRUD-btn">
               Create exercise

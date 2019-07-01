@@ -33,9 +33,15 @@ class Profile extends Component {
       .catch(err => console.log(err));
   }
 
+  addDefaultSrc(ev) {
+    ev.target.src =
+      "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/65205880370953.5cdeeb0771679.jpg";
+  }
+
   render() {
     const userInfo = this.state.userInfo;
     const exercises = this.state.exercises;
+
     return (
       <div className="profile-page-container">
         <div className="profile-page-content">
@@ -59,6 +65,7 @@ class Profile extends Component {
                         src={exercise.customImg}
                         className="exercise-img"
                         alt={exercise.exerciseTitle}
+                        onError={this.addDefaultSrc}
                       />
                     </div>
                   </Link>

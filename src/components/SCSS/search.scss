@@ -1,0 +1,26 @@
+.search-container {
+  width: 50%;
+  margin: 0 auto;
+
+  form {
+    input {
+      width: 100%;
+      padding: 1% 0;
+      background: #202020;
+      border: 1px solid #474747;
+      border-radius: 5px;
+      padding-left: 2%;
+      font-size: 1rem;
+      color: white;
+      outline: none;
+    }
+
+    input:focus {
+      border: 1px solid #ffec42;
+    }
+
+    input::placeholder {
+      font-size: 1rem;
+    }
+  }
+}

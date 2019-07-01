@@ -44,6 +44,11 @@ class Dashboard extends Component {
     }
   };
 
+  addDefaultSrc(ev) {
+    ev.target.src =
+      "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/65205880370953.5cdeeb0771679.jpg";
+  }
+
   render() {
     return (
       <div className="dashboard-container">
@@ -93,6 +98,7 @@ class Dashboard extends Component {
               src={content.customImg}
               className="dashboard-img"
               alt={content.exerciseTitle}
+              onError={this.addDefaultSrc}
             />
           </>
         ))}

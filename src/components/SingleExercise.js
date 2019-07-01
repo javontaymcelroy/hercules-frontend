@@ -51,6 +51,11 @@ class SingleExercise extends Component {
       });
   };
 
+  addDefaultSrc(ev) {
+    ev.target.src =
+      "https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/65205880370953.5cdeeb0771679.jpg";
+  }
+
   render() {
     const targetRegion = type => {
       let regionResult;
@@ -82,6 +87,8 @@ class SingleExercise extends Component {
         case "None":
           regionResult = require("./assets/none.svg");
           break;
+        default:
+          return;
       }
       return regionResult;
     };
@@ -96,6 +103,8 @@ class SingleExercise extends Component {
     const lifted = this.state.progressTracking.forEach(item => {
       return (resultLifted[`${item.date}`] = item.amountLifted);
     });
+
+    console.log(date, lifted);
 
     return (
       <div className="single-exercise-container">
@@ -120,6 +129,7 @@ class SingleExercise extends Component {
               backgroundSize: "cover",
               backgroundPosition: "center"
             }}
+            onError={this.addDefaultSrc}
           />
           <div className="date-crud-container">
             <h6>
@@ -147,6 +157,7 @@ class SingleExercise extends Component {
               <img
                 src={targetRegion(exercise.targetRegionArea)}
                 className="target-body"
+                alt={exercise.exerciseTitle}
               />
             </div>
             <div className="progress-tracking-container">

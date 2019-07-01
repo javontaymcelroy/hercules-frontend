@@ -168,7 +168,6 @@ class EditExercise extends Component {
               placeholder="Copy and paste an IMG url here."
               onChange={this.handleChanges}
               value={editExercise.customImg}
-              required={true}
             />
             <button type="submit" className="CRUD-btn">
               Confirm Changes
