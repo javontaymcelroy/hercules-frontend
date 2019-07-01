@@ -28,22 +28,36 @@ class LandingPage extends Component {
               <a
                 href="https://www.linkedin.com/in/javontay-mcelroy-663b81bb/"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 LinkedIn
               </a>
               <a
                 href="https://github.com/javontaymcelroy/hercules-frontend"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Github
               </a>
-              <a href="https://instagram.com/thekingmuze" target="_blank">
+              <a
+                href="https://instagram.com/thekingmuze"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Instagram
               </a>
-              <a href="https://twitter.com/thekingmuze" target="_blank">
+              <a
+                href="https://twitter.com/thekingmuze"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Twitter
               </a>
-              <a href="https://javontaymcelroy.com" target="_blank">
+              <a
+                href="https://javontaymcelroy.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Portfolio
               </a>
             </div>
