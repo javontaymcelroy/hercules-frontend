@@ -38,16 +38,12 @@
 
     .exercise-flex {
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(4, 42.5vh);
-      grid-row-gap: 2vh;
-      justify-content: center;
       margin-bottom: 5%;
 
       .image-links {
         .image-content {
           position: relative;
-          width: 40vh;
+          margin-bottom: 3%;
 
           h1 {
             position: absolute;
@@ -58,7 +54,7 @@
             text-align: center;
             z-index: 100;
             pointer-events: none;
-            font-size: 1.5rem;
+            font-size: 2rem;
           }
 
           .exercise-img {
@@ -70,6 +66,7 @@
             filter: brightness(70%);
             cursor: pointer;
             transition: all 0.2s ease-in-out;
+            border-radius: 10px;
           }
 
           .exercise-img:hover {
