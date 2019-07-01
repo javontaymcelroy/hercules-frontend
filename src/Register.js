@@ -89,7 +89,7 @@ class Register extends Component {
             Let's go!
           </button>
           <Link to="/onboarding">
-            <img src={back} className="back" alt="back" />
+            <img src={back} className="onboard-back" alt="back" />
           </Link>
         </form>
       </div>

@@ -39,3 +39,14 @@ h6 {
 .back:hover {
   opacity: 0.7;
 }
+
+@media (max-width: 375px) {
+  .back {
+    position: absolute;
+    z-index: 999;
+    top: 8%;
+    left: 0%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+}

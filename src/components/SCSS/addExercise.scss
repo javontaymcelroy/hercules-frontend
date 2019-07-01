@@ -132,3 +132,144 @@
     }
   }
 }
+
+@media (max-width: 375px) {
+  .add-exercise-container {
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 375px;
+    height: 120vh;
+
+    .add-exercise-content {
+      width: 100%;
+      position: relative;
+      top: 4%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .page-title {
+        font-size: 1.5rem;
+        margin-top: 20%;
+      }
+
+      .CRUD-form {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 5%;
+
+        h6 {
+          margin: 0;
+          margin-top: 20px;
+          margin-bottom: 10px;
+          font-size: 1rem;
+        }
+
+        select {
+          background: none;
+          width: 100%;
+          border: 1px solid #323232;
+          color: white;
+          height: 5vh;
+          font-size: 1rem;
+          outline: none;
+
+          option {
+            color: black;
+          }
+        }
+
+        input {
+          width: 95%;
+          margin-bottom: 4%;
+          padding: 3% 2%;
+          background: none;
+          font-size: 0.8rem;
+          color: white;
+          border: 1px solid #323232;
+        }
+
+        input::placeholder {
+          font-size: 0.8rem;
+        }
+
+        input:focus {
+          border: 1px solid #ffec42;
+          outline: #ffec42;
+        }
+
+        textarea {
+          padding: 3% 2%;
+          width: 95%;
+          height: 20vh;
+          background: none;
+          color: white;
+          border: 1px solid #323232;
+          font-size: 0.8rem;
+        }
+
+        textarea::placeholder {
+          font-size: 0.8rem;
+        }
+
+        textarea:focus {
+          border: 1px solid #ffec42;
+          outline: #ffec42;
+        }
+
+        .rep-lift-flex {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          align-items: center;
+
+          input {
+            width: 95%;
+            margin-bottom: 4%;
+            padding: 6% 2%;
+            background: none;
+            font-size: 0.8rem;
+            color: white;
+            border: 1px solid #323232;
+            text-align: center;
+          }
+
+          h1 {
+            margin: 0;
+            margin-top: 10%;
+            font-size: 0.8rem;
+          }
+
+          .amount-lifted {
+            text-align: right;
+          }
+        }
+
+        .CRUD-btn {
+          background: #ffec42;
+          border: none;
+          margin-top: 5%;
+          padding: 4% 6%;
+          width: 100%;
+          font-weight: bold;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+        }
+
+        .CRUD-btn:hover {
+          background: white;
+          color: black;
+        }
+
+        .cancel-btn {
+          border: 1px solid white;
+          background: none;
+          color: white;
+        }
+      }
+    }
+  }
+}

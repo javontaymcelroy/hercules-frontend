@@ -118,7 +118,7 @@
     position: absolute;
     z-index: 500;
     bottom: 6vh;
-    left: 31.6vh;
+    left: 18.2%;
     width: 7vh;
   }
 
@@ -153,6 +153,178 @@
       filter: brightness(50%);
       width: 100%;
       object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .landing-page-container {
+    background: white;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    position: absolute;
+    top: 0;
+
+    .landing-page-content {
+      // border: 1px solid rgba(255, 0, 0, 0.479);
+      position: absolute;
+      z-index: 500;
+      top: 12vh;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 100%;
+      height: 87.8vh;
+
+      .hero-box-container {
+        width: 100%;
+        position: absolute;
+        top: 88vh;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .content-1 {
+          background: white;
+          padding: 3% 2%;
+
+          h6 {
+            font-size: 1rem;
+            margin: 0;
+          }
+        }
+
+        .content-2 {
+          background-image: url("../assets/hero_image.png");
+          background-size: cover;
+          background-repeat: no-repeat;
+          padding: 3% 2%;
+
+          h6,
+          p {
+            color: white;
+          }
+
+          h6 {
+            font-size: 1rem;
+            margin: 0;
+          }
+        }
+
+        .content-3 {
+          background: white;
+          padding: 3% 0;
+          text-align: center;
+          display: flex;
+          width: 375px;
+
+          h6 {
+            font-size: 1rem;
+            margin: 0 auto;
+            text-align: center;
+          }
+        }
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      p {
+        color: black;
+      }
+
+      .hero-title-tag {
+        margin-left: 0%;
+        width: 305px;
+        height: 40vh;
+        margin: 28% auto 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h1,
+        p {
+          color: white;
+          margin: 0;
+          margin-left: 0%;
+          text-align: center;
+        }
+
+        h1 {
+          font-size: 4rem;
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+
+        .CTA-btn {
+          background: #ffec42;
+          border: none;
+          margin-top: 2%;
+          width: 100%;
+          padding: 6% 0;
+          font-weight: bold;
+          font-size: 1rem;
+          cursor: pointer;
+          outline: none;
+          transition: all 0.2s ease-in-out;
+        }
+
+        .CTA-btn:hover {
+          background: white;
+          color: black;
+        }
+      }
+    }
+
+    .down {
+      position: absolute;
+      z-index: 500;
+      bottom: 15vh;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      width: 7vh;
+    }
+
+    .borders {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: 0;
+      width: 375px;
+      display: flex;
+      justify-content: space-evenly;
+      opacity: 0.25;
+
+      .border {
+        content: "";
+        display: block;
+        width: 1px;
+        background: white;
+        height: 100vh;
+      }
+    }
+
+    .video-container {
+      height: 95vh;
+      width: 375px;
+      overflow: hidden;
+      position: absolute;
+      z-index: 1;
+      top: 2.5%;
+
+      .hero-video {
+        filter: brightness(50%);
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+      }
     }
   }
 }
