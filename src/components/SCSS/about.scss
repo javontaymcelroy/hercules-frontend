@@ -47,6 +47,19 @@
     .article-container {
       margin-top: 20%;
 
+      .article-one {
+        .bold-solo {
+          font-family: "Roboto", sans-serif;
+          font-weight: 900;
+          font-size: 1.5rem;
+          width: 80%;
+          margin: 2% auto;
+        }
+        p {
+          color: black;
+        }
+      }
+
       .header {
         display: flex;
         justify-content: space-between;
@@ -58,6 +71,7 @@
           font-size: 1rem;
         }
       }
+
       .article {
         width: 80%;
         margin: 0 auto;
@@ -71,6 +85,27 @@
           color: black;
         }
       }
+
+      .article-flex {
+        display: flex;
+
+        .image-break-half {
+          width: 50%;
+          height: 60vh;
+          object-fit: cover;
+          margin-left: 10%;
+        }
+
+        .article-half {
+          width: 35%;
+          margin: 0 auto;
+
+          p {
+            color: black;
+          }
+        }
+      }
+
       .image-break {
         width: 80%;
         margin: 0 10%;
@@ -79,6 +114,7 @@
       }
     }
   }
+
   .background-image {
     position: absolute;
     top: 0.5%;

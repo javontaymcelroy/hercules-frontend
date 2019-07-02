@@ -4,6 +4,8 @@ import "./SCSS/about.scss";
 
 import bg from "./assets/yoga.jpg";
 import wireframes from "./assets/hercules-wireframe.png";
+import userflow from "./assets/Blank_Diagram.png";
+import firstLanding from "./assets/first_landingpage.png";
 
 const AboutPage = () => {
   return (
@@ -53,33 +55,91 @@ const AboutPage = () => {
             <div className="header">
               <h6>Nr. 02</h6>
               <h6>User Interface - User Experience</h6>
-              <h6>The Wireframes</h6>
+              <h6>User Flow Charts</h6>
             </div>
-            <img src={wireframes} className="image-break" alt="wireframes" />
+            <img src={userflow} className="image-break" alt="user flow chart" />
             <div className="article">
               <p className="bold">
-                Day One - Part 2: Creating wireframes for both the Landing Page
-                and the app.
+                Day One - Part 1: Creating user flow charts for the app and
+                landing page.
               </p>
               <p>
-                I started working on the wireframes 2 days prior to the kick-off
-                of Build Weeks, which starts on a Friday. I had to move quickly
-                since I only had two days to quickly come up with a full design
-                for my team.
-                <br />
-                <br />
-                I used a website called Whimsical to create my wireframes. This
-                process moved rather quickly since I had the user-flow chart
-                completed. I had a concept in my mind for the app already so
-                that also help speed up the workflow. I experiemented a bit with
-                the layout, consistently doing research, finding competitor apps
-                and designs to see what's already been done and what I could do
-                better.
-                <br />
-                <br />
-                After about an hour, I had a wireframe that I could create my
-                high-fidelity designs from.
+                Starting this project, I wanted to create a user flow chart so
+                that there was a clear overview of how the app will be built and
+                how the user will interact with it. I used a website called
+                LucidChart to create my user flow chart. This phase was fairly
+                simple, but there were some tweaking to ensure that the user
+                flow was as clear as possible.
               </p>
+            </div>
+            <div className="header">
+              <h6>Nr. 03</h6>
+              <h6>User Interface - User Experience</h6>
+              <h6>Low-Fidelity Designs</h6>
+            </div>
+            <img
+              src={wireframes}
+              className="image-break"
+              alt="low-fidelity design"
+            />
+            <div className="article">
+              <p className="bold">
+                Day One - Part 2: Creating a low-fidelity design of the app and
+                landing page.
+              </p>
+              <p>
+                After creating the user flow charts, I went straight to creating
+                a low-fidelity design of the app and landing page. I skipped the
+                wire-framing phase because I had an initial vision of how I
+                wanted the app to look. Using Whimsical to create my
+                low-fidelity designs, I laid out the landing page and then a
+                low-fi design for the mobile app.
+                <br />
+                <br />
+                These phases, from the user flow to the low-fidelity designs,
+                moved relatively quickly! I had ideas flowing and was able to
+                knock out the designs. Throughout the process, I also did
+                research and looked at other apps similar to the one I was
+                designing. Doing so help me see what's already been done, what's
+                required for a workout app, and what could I do to make my app
+                different.
+              </p>
+            </div>
+            <p className="bold-solo">
+              Day Two - Part One: Creating a high-fidelity design of the app and
+              landing page.
+            </p>
+            <div className="article-flex">
+              <img
+                src={firstLanding}
+                className="image-break-half"
+                alt="landing page iteration one"
+              />
+              <div className="article-half">
+                <p>
+                  My favorite phase, the first task of day two was to go from
+                  low-fidelity to high-fidelity design. For this phase, I
+                  primarily used Figma to create my high-fidelities. After a
+                  couple hours of work, I sent my designs off for review and
+                  feedback.
+                  <br />
+                  <br />
+                  After receiving feedback, I made adjustments and tweaks. One
+                  of them was experimenting with the design of the landing page.
+                  The first iteration of the design had an "off-balanced" feel
+                  which had to be adjusted. There was too much content on the
+                  left side of the design, so that had to be corrected.
+                  <br />
+                  <br />
+                  Another suggestion I received was to change the wording from
+                  workouts to exercises. The currently flow of the app was
+                  mainly best for an exercise app and not a full workout app. I
+                  found that if I went in the direction of a full workout app,
+                  my backend would've been a lot more complex as well as the
+                  user flow. Given the time-frame, I went with just an app that
+                  allowed users to create, read, update, and delete exercises.
+                </p>
+              </div>
             </div>
           </div>
         </div>
